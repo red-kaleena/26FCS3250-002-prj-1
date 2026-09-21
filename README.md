@@ -40,9 +40,7 @@ feature/* ──PR──▶ dev ──PR──▶ main ──tag──▶ PyPI +
 |---|---|
 | Hlib Yeromin | manager (owner) |
 | Richard Hall | developer |
-| Stephanie Rivera-Martinez | tester |
-| Riley Drenth | TBD |
-| Tyler Black | TBD |
+| Riley Drenth | testing and documentation |
 
 ## Manual Testing Log
 
