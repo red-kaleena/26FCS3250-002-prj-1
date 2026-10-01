@@ -53,6 +53,75 @@ feature/* ──PR──▶ dev ──PR──▶ main ──tag──▶ PyPI +
 | Delete Enrollment | 10/01/26 | 14:32 | passed |
 | Update Grade / GPA | 10/01/26 | 14:32 | passed |
 
+## Tech Stack
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| Framework | [Flask](https://flask.palletsprojects.com/) | Web application framework |
+| ORM | [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/) | Database ORM for models (`User`, `Course`, `Enrollment`) |
+| Forms | [Flask-WTF](https://flask-wtf.readthedocs.io/) / [WTForms](https://wtforms.readthedocs.io/) | Form handling and CSRF protection |
+| Auth | [Flask-Login](https://flask-login.readthedocs.io/) | User session management |
+| Hashing | [bcrypt](https://pypi.org/project/bcrypt/) | Secure password hashing |
+| Database | [SQLite](https://www.sqlite.org/) | Local development database (`instance/prj1.db`) |
+| GPA Library | [gpa_calculator](./src/gpa_calculator) | Credit-weighted GPA calculation module |
+| Packaging | [hatchling](https://hatch.pypa.io/) | Build backend for PyPI distribution |
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.9+
+- macOS/Linux/Windows
+
+### Installation
+
+```bash
+# Clone the repository
+cd "project 1"
+
+# Create and activate virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Running the Application
+
+```bash
+# Navigate to source directory
+cd src
+
+# Set Flask environment variable
+export FLASK_APP=app  # On Windows (CMD): set FLASK_APP=app
+                      # On Windows (PowerShell): $env:FLASK_APP="app"
+
+# Run the application
+flask run --host 127.0.0.1 --port 5000
+```
+
+Open your browser and navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+
+## Usage
+
+1. **Sign Up** - Create a new account with ID, name, password, and confirmation
+2. **Log In** - Authenticate with your credentials
+3. **Grade Entry** - Click "Grade Entry" to add a course with its letter grade
+4. **View Enrollments** - See all enrolled courses with credits, grades, and calculated GPA
+5. **Delete Enrollment** - Remove a course (GPA automatically recalculates)
+6. **Sign Out** - End your session
+
+## UML Diagrams
+
+### Use Case Diagram
+
+![Use Case Diagram](pics/pic1.png)
+
+### Class Diagram
+
+![Class Diagram](pics/pic3.png)
+
 ## Team Evaluation
 
 > Important: every member must submit the team/self-evaluation form —
