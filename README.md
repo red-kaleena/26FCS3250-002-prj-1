@@ -46,12 +46,12 @@ feature/* ──PR──▶ dev ──PR──▶ main ──tag──▶ PyPI +
 
 | Functionality Tested | Date | Time | Result |
 |---|---|---|---|
-| Sign Up | mm/dd/26 | 00:00 | passed/failed |
-| Login / Signout | mm/dd/26 | 00:00 | passed/failed |
-| List Enrollments | mm/dd/26 | 00:00 | passed/failed |
-| Create Enrollment | mm/dd/26 | 00:00 | passed/failed |
-| Delete Enrollment | mm/dd/26 | 00:00 | passed/failed |
-| Update Grade / GPA | mm/dd/26 | 00:00 | passed/failed |
+| Sign Up | 10/01/26 | 14:30 | passed |
+| Login / Signout | 10/01/26 | 14:30 | passed |
+| List Enrollments | 10/01/26 | 14:31 | passed |
+| Create Enrollment | 10/01/26 | 14:31 | passed |
+| Delete Enrollment | 10/01/26 | 14:32 | passed |
+| Update Grade / GPA | 10/01/26 | 14:32 | passed |
 
 ## Team Evaluation
 
