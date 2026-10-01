@@ -14,13 +14,33 @@ GRADE_POINTS = {
     'F': 0.0
 }
 
-# TODO 
 def calculate_gpa(enrollments):
     '''
-    Computes the credit-weighted GPA from a list of dictionary-like enrollments.
-    Each enrollment is expected to provide a 'grade' key (e.g. 'A+', 'B-', ...)
-    and a 'credits' key (the number of credit hours for the course).
+    Computes the credit-weighted GPA from a list of Enrollment objects.
+    Each enrollment should have a 'grade' and access to course.credits.
     Enrollments with no grade yet, or an unrecognized grade, are ignored.
     Returns 0 when there are no graded credits to average.
     '''
-    return 0
+    total_points = 0.0
+    total_credits = 0
+    for e in enrollments or []:
+        try:
+            grade = getattr(e, 'grade', None)
+            if not grade:
+                continue
+            gp = GRADE_POINTS.get(grade)
+            if gp is None:
+                continue
+            credits = 0
+            course = getattr(e, 'course', None)
+            if course is not None:
+                credits = getattr(course, 'credits', 0) or 0
+            if credits <= 0:
+                continue
+            total_points += gp * credits
+            total_credits += credits
+        except Exception:
+            continue
+    if total_credits <= 0:
+        return 0
+    return round(total_points / total_credits, 3)
